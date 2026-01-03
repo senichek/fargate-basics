@@ -80,6 +80,7 @@ docker push <aws-acc-id>.dkr.ecr.eu-west-1.amazonaws.com/flask-fargate-demo:late
 ### What has been done in AWS console:
 - create private ECR
 - created role called ecsTaskExecutionRole
+- created task definition
 - created cluster splendid-zebra-d6a4bc
 - default VPC and Subnets
 - Security Group to allow TCP on port 8080 for my IP
