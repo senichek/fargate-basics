@@ -18,3 +18,9 @@ module "ecr" {
   project              = local.project
   environment          = local.environment
 }
+
+module "iam" {
+  source               = "./modules/iam"
+  project              = local.project
+  environment          = local.environment
+}
