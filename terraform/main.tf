@@ -30,3 +30,9 @@ module "ecs-cluster" {
   project              = local.project
   environment          = local.environment
 }
+
+module "cloudwatch" {
+  source               = "./modules/cloudwatch"
+  project              = local.project
+  environment          = local.environment
+}
