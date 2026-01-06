@@ -24,3 +24,9 @@ module "iam" {
   project              = local.project
   environment          = local.environment
 }
+
+module "ecs-cluster" {
+  source               = "./modules/ecs_cluster"
+  project              = local.project
+  environment          = local.environment
+}
