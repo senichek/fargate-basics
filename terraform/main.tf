@@ -59,3 +59,12 @@ module "ecs_task" {
   logs-group-name    = module.cloudwatch.cloudwatch-log-group-name
   ecr-repo-name      = local.ecr_repo_name
 }
+
+module "alb" {
+  source            = "./modules/alb"
+  project           = local.project
+  environment       = local.environment
+  public_subnet_ids = module.vpc.public_subnet_ids
+  alb-sg-id         = module.security_group.alb_sg_id
+  vpc_id            = module.vpc.vpc_id
+}
