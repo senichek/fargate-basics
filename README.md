@@ -55,12 +55,12 @@ aws ecr get-login-password --region eu-west-1 \
 ```bash
 # Tag the Docker image
 docker tag fargate-demo:latest \
-<aws-acc-id>.dkr.ecr.eu-west-1.amazonaws.com/flask-fargate-demo:latest
+<aws-acc-id>.dkr.ecr.eu-west-1.amazonaws.com/fargate-demo-dev-ecr:latest
 ```
 
 ```bash
 # Push the Docker image to ECR
-docker push <aws-acc-id>.dkr.ecr.eu-west-1.amazonaws.com/flask-fargate-demo:latest
+docker push <aws-acc-id>.dkr.ecr.eu-west-1.amazonaws.com/fargate-demo-dev-ecr:latest
 ```
 
 **Explanations:**
@@ -72,6 +72,7 @@ docker push <aws-acc-id>.dkr.ecr.eu-west-1.amazonaws.com/flask-fargate-demo:late
 
 - `docker tag <local-image>:<tag> <repository-uri>:<tag>`  
   Tags and prepares your local Docker image for ECR.
+  The image must be tagged with the full ECR repository URI.
 
 - `docker push <repository-uri>:<tag>`  
   Uploads your Docker image to ECR.
